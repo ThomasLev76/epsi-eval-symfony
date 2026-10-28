@@ -19,17 +19,17 @@
                 <td>{{ technique.id }}</td>
                 <td>{{ technique.nom }}</td>
                 <td>
-                    <a href="{{ path('app_technique_show', {'id': technique.id}) }}">show</a>
-                    <a href="{{ path('app_technique_edit', {'id': technique.id}) }}">edit</a>
+                    <a href="{{ path('app_technique_show', {'id': technique.id}) }}">Voir</a>
+                    <a href="{{ path('app_technique_edit', {'id': technique.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Pas trouver</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_technique_new') }}">Create new</a>
+    <a href="{{ path('app_technique_new') }}">Ajouter une nouvelle technique</a>
 {% endblock %}

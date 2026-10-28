@@ -27,17 +27,17 @@
                 <td>{{ benevole.nom }}</td>
                 <td>{{ benevole.prenom }}</td>
                 <td>
-                    <a href="{{ path('app_benevole_show', {'id': benevole.id}) }}">show</a>
-                    <a href="{{ path('app_benevole_edit', {'id': benevole.id}) }}">edit</a>
+                    <a href="{{ path('app_benevole_show', {'id': benevole.id}) }}">montrer</a>
+                    <a href="{{ path('app_benevole_edit', {'id': benevole.id}) }}">Mondifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Pas trouver</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_benevole_new') }}">Create new</a>
+    <a href="{{ path('app_benevole_new') }}">Créer un nouveau bénévole</a>
 {% endblock %}

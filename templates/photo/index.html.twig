@@ -23,17 +23,17 @@
                 <td>{{ photo.nomFichier }}</td>
                 <td>{{ photo.etatOeuvre }}</td>
                 <td>
-                    <a href="{{ path('app_photo_show', {'id': photo.id}) }}">show</a>
-                    <a href="{{ path('app_photo_edit', {'id': photo.id}) }}">edit</a>
+                    <a href="{{ path('app_photo_show', {'id': photo.id}) }}">Montrer</a>
+                    <a href="{{ path('app_photo_edit', {'id': photo.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Pas trouver</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_photo_new') }}">Create new</a>
+    <a href="{{ path('app_photo_new') }}">Ajouter une nouvelle photo</a>
 {% endblock %}

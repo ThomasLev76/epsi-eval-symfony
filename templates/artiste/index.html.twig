@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Artiste index{% endblock %}
+{% block title %}Artistes index{% endblock %}
 
 {% block body %}
-    <h1>Artiste index</h1>
+    <h1>Artistes index</h1>
 
     <table class="table">
         <thead>
@@ -25,17 +25,17 @@
                 <td>{{ artiste.bio }}</td>
                 <td>{{ artiste.nationalite }}</td>
                 <td>
-                    <a href="{{ path('app_artiste_show', {'id': artiste.id}) }}">show</a>
-                    <a href="{{ path('app_artiste_edit', {'id': artiste.id}) }}">edit</a>
+                    <a href="{{ path('app_artiste_show', {'id': artiste.id}) }}">Voir</a>
+                    <a href="{{ path('app_artiste_edit', {'id': artiste.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Pas trouver</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_artiste_new') }}">Create new</a>
+    <a href="{{ path('app_artiste_new') }}">Ajouter un nouveau</a>
 {% endblock %}
