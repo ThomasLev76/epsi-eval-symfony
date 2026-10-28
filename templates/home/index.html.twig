@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Art-2-Rue{% endblock %}
+
+{% block body %}
+    <h1>Art-2-Rue</h1>
+    <p>Archive du patrimoine éphémère du Street Art.</p>
+
+    {% if app.user %}
+        <p>Bonjour {{ app.user.prenom }} {{ app.user.nom }}</p>
+        <a href="{{ path('app_logout') }}">Se déconnecter</a>
+    {% else %}
+        <a href="{{ path('app_login') }}">Connexion</a>
+        <a href="{{ path('app_register') }}">Inscription</a>
+    {% endif %}
+{% endblock %}
