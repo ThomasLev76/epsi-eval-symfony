@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Benevole{% endblock %}
+
+{% block body %}
+    <h1>Benevole</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ benevole.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ benevole.email }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ benevole.roles ? benevole.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ benevole.password }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ benevole.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ benevole.prenom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_benevole_index') }}">back to list</a>
+
+    <a href="{{ path('app_benevole_edit', {'id': benevole.id}) }}">edit</a>
+
+    {{ include('benevole/_delete_form.html.twig') }}
+{% endblock %}

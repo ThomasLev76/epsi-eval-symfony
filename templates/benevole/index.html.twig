@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Benevole index{% endblock %}
+
+{% block body %}
+    <h1>Benevole index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for benevole in benevoles %}
+            <tr>
+                <td>{{ benevole.id }}</td>
+                <td>{{ benevole.email }}</td>
+                <td>{{ benevole.roles ? benevole.roles|json_encode : '' }}</td>
+                <td>{{ benevole.password }}</td>
+                <td>{{ benevole.nom }}</td>
+                <td>{{ benevole.prenom }}</td>
+                <td>
+                    <a href="{{ path('app_benevole_show', {'id': benevole.id}) }}">show</a>
+                    <a href="{{ path('app_benevole_edit', {'id': benevole.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_benevole_new') }}">Create new</a>
+{% endblock %}

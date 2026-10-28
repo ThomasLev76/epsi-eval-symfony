@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Benevole{% endblock %}
+
+{% block body %}
+    <h1>Edit Benevole</h1>
+
+    {{ include('benevole/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_benevole_index') }}">back to list</a>
+
+    {{ include('benevole/_delete_form.html.twig') }}
+{% endblock %}
